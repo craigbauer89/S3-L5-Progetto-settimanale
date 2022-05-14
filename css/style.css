@@ -64,7 +64,7 @@ div.box18 {
     width: 30%;
     margin: 5% 35%;
     height: 300px;
-    gap:20px;
+    gap:10px;
     grid-template-areas: "box1 box1 box1 box1" 
                          "box2 box3 box4 box5" 
                          "box6 box7 box8 box9"
@@ -87,19 +87,24 @@ input, button, .box1{
     color: rgb(72, 97, 142);
     background-color: lightgrey;
     border:none;
+    
 
 }
 
 .container div.box1  {
-    width: 95%;
-    font-size: 3rem;
+    width: 99%;
+    /*font-size: 3rem;
     font-weight: bolder;
     color: rgb(72, 97, 142);
-    background-color: lightgrey;
-    border: 5px solid rgb(72, 97, 142);
-    font-size: 3rem;
+    background-color: lightgrey; */
+    background-color: white;
+    border: 3px solid rgb(72, 97, 142);
+    /* font-size: rem;
     color: rgb(72, 97, 142);
-    text-align: left;
-    padding: 2% 2% 5% 0;
+    text-align: left;*/
 } 
 
+p {
+    padding-top: 10px;
+    font-size: 3.5rem;
+}
