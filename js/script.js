@@ -4,6 +4,7 @@ var num1 =  ' ';
 var num2 =  ' ';
 var action = ' ';
 var risposta = ' ';
+var nuovaRisposta = ' ';
 
 function uno() {
     document.getElementById('risposta').innerHTML += 1;
@@ -76,7 +77,7 @@ function moltiplicazione(x,y) {
     num1 = numero;
     numero = ' ';
     action = 'multiply';
-    let moltiplicazione = x * y;
+    let moltiplicazione = parseInt(x) * parseInt(y);
     return moltiplicazione; 
 }
 
@@ -86,8 +87,8 @@ function aggiunge(x,y) {
     num1 = numero;
     numero = ' ';
     action = 'add';
-    let moltiplicazione = parseInt(x) + parseInt(y);
-    return moltiplicazione; 
+    let aggiunge = parseInt(x) + parseInt(y);
+    return aggiunge; 
 }
 
 function meno(x,y) {
@@ -95,8 +96,8 @@ function meno(x,y) {
     num1 = numero;
     numero = ' ';
     action = 'subtract';
-    let moltiplicazione = x - y;
-    return moltiplicazione; 
+    let meno = parseInt(x) - parseInt(y);
+    return meno; 
 }
 
 function dividere(x,y) {
@@ -104,32 +105,56 @@ function dividere(x,y) {
     num1 = numero;
     numero = ' ';
     action = 'divide';
-    let moltiplicazione = x / y;
-    return moltiplicazione; 
+    let dividere = parseInt(x) / parseInt(y);
+    return dividere; 
 }
 
 function uguale() {
 
     if (action === 'multiply'){
+        if (risposta !== ' ') {
+            num2 = numero;
+            risposta = document.getElementById('risposta').innerHTML =moltiplicazione(risposta,num2);
+
+        } else {
             num2 = numero;
             numero = '';
-            document.getElementById('risposta').innerHTML =moltiplicazione(num1,num2);
-            
-    } 
+            risposta = document.getElementById('risposta').innerHTML =moltiplicazione(num1,num2);
+        }   
+    }     
     else if (action === 'add'){
-        num2 = numero;
-        numero = '';
-        document.getElementById('risposta').innerHTML =aggiunge(num1,num2);
+        if (risposta !== ' ') {
+            num2 = numero;
+            risposta = document.getElementById('risposta').innerHTML =aggiunge(risposta,num2);
+
+        } else {
+            num2 = numero;
+            numero = '';
+            risposta = document.getElementById('risposta').innerHTML =aggiunge(num1,num2);
+        }
     }
     else if (action === 'subtract'){
-        num2 = numero;
-        numero = '';
-        document.getElementById('risposta').innerHTML =meno(num1,num2);
+        if (risposta !== ' ') {
+            num2 = numero;
+            nuovaRisposta = document.getElementById('risposta').innerHTML =meno(risposta,num2);
+            risposta = nuovaRisposta;
+
+        } else {
+            num2 = numero;
+            numero = '';
+            risposta = document.getElementById('risposta').innerHTML =meno(num1,num2);
+        }
     } 
     else if (action === 'divide'){
-        num2 = numero;
-        numero = '';
-        document.getElementById('risposta').innerHTML =dividere(num1,num2);
+        if (risposta !== ' ') {
+            num2 = numero;
+            risposta = document.getElementById('risposta').innerHTML =dividere(risposta,num2);
+
+        } else {
+            num2 = numero;
+            numero = '';
+            risposta = document.getElementById('risposta').innerHTML =dividere(num1,num2);
+        }
     } 
     else {
         num2 = numero;

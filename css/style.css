@@ -86,9 +86,9 @@ input, button, .box1{
     font-family: 'Fira Sans', sans-serif;
     color: rgb(72, 97, 142);
     background-color: lightgrey;
-    border:none;
+    border: 3px solid lightgrey;
     
-
+  
 }
 
 .container div.box1  {
@@ -107,4 +107,9 @@ input, button, .box1{
 p {
     padding-top: 10px;
     font-size: 3.5rem;
+}
+
+input:hover, button:hover{
+    border: 3px solid rgb(72, 97, 142);
+
 }
