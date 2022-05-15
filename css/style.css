@@ -59,6 +59,10 @@ div.box18 {
     grid-area: box18;
 }
 
+div.box19 {
+    grid-area: box19;
+}
+
 .container {
     display: grid;
     width: 30%;
@@ -70,7 +74,7 @@ div.box18 {
                          "box6 box7 box8 box9"
                          "box10 box11 box12 box13" 
                          "box14 box15 box16 box17" 
-                         "box18 box18 box18 box18" 
+                         "box18 box18 box18 box19" 
    
 }
 

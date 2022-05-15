@@ -1,4 +1,3 @@
-
 var numero = ' ';
 var num1 =  ' ';
 var num2 =  ' ';
@@ -61,6 +60,13 @@ function zero() {
 function punto() {
     document.getElementById('risposta').innerHTML += '.';
     numero += '.';
+    console.log(numero);
+
+}
+
+function meno2() {
+    document.getElementById('risposta').innerHTML += '-';
+    numero += '-';
 
 }
 
@@ -77,17 +83,16 @@ function moltiplicazione(x,y) {
     num1 = numero;
     numero = ' ';
     action = 'multiply';
-    let moltiplicazione = parseInt(x) * parseInt(y);
+    let moltiplicazione = x * y;
     return moltiplicazione; 
 }
 
 function aggiunge(x,y) {
-    // document.getElementById('risposta').innerHTML = " ";
     document.getElementById('risposta').innerHTML += '+';
     num1 = numero;
     numero = ' ';
     action = 'add';
-    let aggiunge = parseInt(x) + parseInt(y);
+    let aggiunge = (parseFloat(x)) + (parseFloat(y));
     return aggiunge; 
 }
 
@@ -96,7 +101,7 @@ function meno(x,y) {
     num1 = numero;
     numero = ' ';
     action = 'subtract';
-    let meno = parseInt(x) - parseInt(y);
+    let meno = x- y;
     return meno; 
 }
 
@@ -105,7 +110,7 @@ function dividere(x,y) {
     num1 = numero;
     numero = ' ';
     action = 'divide';
-    let dividere = parseInt(x) / parseInt(y);
+    let dividere = x / y;   
     return dividere; 
 }
 
@@ -115,22 +120,29 @@ function uguale() {
         if (risposta !== ' ') {
             num2 = numero;
             risposta = document.getElementById('risposta').innerHTML =moltiplicazione(risposta,num2);
-
+            action = ' ';
+            
         } else {
             num2 = numero;
             numero = '';
             risposta = document.getElementById('risposta').innerHTML =moltiplicazione(num1,num2);
+            action = ' ';
         }   
-    }     
+        
+    }
     else if (action === 'add'){
         if (risposta !== ' ') {
             num2 = numero;
             risposta = document.getElementById('risposta').innerHTML =aggiunge(risposta,num2);
+            action = ' ';
+
 
         } else {
             num2 = numero;
             numero = '';
             risposta = document.getElementById('risposta').innerHTML =aggiunge(num1,num2);
+            action = ' ';
+
         }
     }
     else if (action === 'subtract'){
@@ -138,29 +150,35 @@ function uguale() {
             num2 = numero;
             nuovaRisposta = document.getElementById('risposta').innerHTML =meno(risposta,num2);
             risposta = nuovaRisposta;
+            action = ' ';
 
         } else {
             num2 = numero;
             numero = '';
             risposta = document.getElementById('risposta').innerHTML =meno(num1,num2);
+            action = ' ';
         }
     } 
     else if (action === 'divide'){
         if (risposta !== ' ') {
             num2 = numero;
             risposta = document.getElementById('risposta').innerHTML =dividere(risposta,num2);
+            action = ' ';
 
         } else {
             num2 = numero;
             numero = '';
             risposta = document.getElementById('risposta').innerHTML =dividere(num1,num2);
+            action = ' ';
         }
     } 
     else {
         num2 = numero;
         numero = '';
-        document.getElementById('risposta').innerHTML = ' ';
+        document.getElementById('risposta').innerHTML = 'err';
     } 
 } 
+
+
 
 
